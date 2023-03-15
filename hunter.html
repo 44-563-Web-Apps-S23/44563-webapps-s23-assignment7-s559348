@@ -1,81 +1,159 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Find the mouse by</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+<head>
+  <title>Hunter page</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" 
+  integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" 
+  integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" 
+  integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script>
 
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
-      crossorigin="anonymous"
-    />
-    <script
-      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
-      integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"
-      integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD"
-      crossorigin="anonymous"
-    ></script>
-  </head>
-  <link rel="stylesheet" type="text/css" href="style.css">
-  <body>
-    <div class="container-fluid">
-        <h2>ashok kumar Swarna- Find the mouse by</h2>
-    </div>
-    <div class="container-fluid d-block">
-        <div class="p-2 bg-danger text-white">Click on the bushes to search for the mouse, beware the cat</div>
-        <div id="bushes" class="p-2 bg-dark text-white">Number of bushes checked is zero</div>
-        <div id="penalty" class="p-2 bg-warning text-white">Penalty is zero</div>
-        <div class="p-2 bg-dark text-white">Click for help</div>
-        <div id="help" class="p-2 bg-warning text-white">Help report</div>
-    </div>
-    <br>
+</head>
+<body>
 
-    <div class="container">
-        <div class="row">
-          <div class="col-sm-2"><img src="C:\Users\S559348\Documents\GitHub\44563-webapps-s23-assignment7-s559348\bush.jpg"/></div>
-          <div class="col-sm-2"><img src="C:\Users\S559348\Documents\GitHub\44563-webapps-s23-assignment7-s559348\bush.jpg"/></div>
-          <div class="col-sm-2"><img src="C:\Users\S559348\Documents\GitHub\44563-webapps-s23-assignment7-s559348\bush.jpg"/></div>
-          <div class="col-sm-2"><img src="C:\Users\S559348\Documents\GitHub\44563-webapps-s23-assignment7-s559348\bush.jpg"/></div>
-          <div class="col-sm-2"><img src="C:\Users\S559348\Documents\GitHub\44563-webapps-s23-assignment7-s559348\bush.jpg"/></div>
-          <div class="col-sm-2"><img src="C:\Users\S559348\Documents\GitHub\44563-webapps-s23-assignment7-s559348\bush.jpg"/></div>
+
+  <h1>Find the mouse by Ashok kumar swarna</h1>
+  <div class="container border" style="background-color:rgb(225, 236, 13);font-family: 'Times New Roman', Times, serif;"> 
+    <p>Click on the bushes to search for the mouse, beware the cat</p>
+  </div>
+  <div class="container border" id="bushes" style="background-color: aqua;font-style: italic;font-family: 'Times New Roman', Times, serif;">
+    <p>Number of bushes checked is zero</p>
+    </div>
+    <div class="container border" id="penalty" style="background-color: rgb(20, 20, 19);font-family: 'Times New Roman', Times, serif;">
+  <p>Penalty is zero</p>
+  </div>
+  <div class="container border"  style="background-color: red;font-family: 'Times New Roman', Times, serif;">
+  <p onclick="help()">Click for help</p>
+  </div>
+  <div class="container border" id="help" style="background-color: rgb(252, 240, 10);font-family: 'Times New Roman', Times, serif;">
+  <p>Help report</p>
+</div><br>
+<div class="container">
+    <button type="button" class="btn btn-primary" onclick="newGame()">New Game</button>
+</div>
+<br>
+<div class="container">
+    <div class="image-row d-flex">
+        <div>
+            <img id="i0" src="bush.jpg" alt="Bushes" height="125" width="125" onclick="check(0)">
+            <img id="i1" src="bush.jpg" alt="Bushes" height="125" width="125" onclick="check(1)">
+            <img id="i2" src="bush.jpg" alt="Bushes" height="125" width="125" onclick="check(2)">
+            <img id="i3" src="bush.jpg" alt="Bushes" height="125" width="125" onclick="check(3)">
+            <img id="i4" src="bush.jpg" alt="Bushes" height="125" width="125" onclick="check(4)">
+            <img id="i5" src="bush.jpg" alt="Bushes" height="125" width="125" onclick="check(5)">
         </div>
-      </div>
-      <div class="container">
-        <div class="row">
-            <div class="col-sm-2"><img src="C:\Users\S559348\Documents\GitHub\44563-webapps-s23-assignment7-s559348\mouse.jpg"/></div>
-          <div class="col-sm-2"><img src="C:\Users\S559348\Documents\GitHub\44563-webapps-s23-assignment7-s559348\mouse.jpg"/></div>
-          <div class="col-sm-2"><img src="C:\Users\S559348\Documents\GitHub\44563-webapps-s23-assignment7-s559348\mouse.jpg"/></div>
-          <div class="col-sm-2"><img src="C:\Users\S559348\Documents\GitHub\44563-webapps-s23-assignment7-s559348\mouse.jpg"/></div>
-          <div class="col-sm-2"><img src="C:\Users\S559348\Documents\GitHub\44563-webapps-s23-assignment7-s559348\mouse.jpg"/></div>
-          <div class="col-sm-2"><img src="C:\Users\S559348\Documents\GitHub\44563-webapps-s23-assignment7-s559348\mouse.jpg"/></div>
+    </div>
+    <div class="image-row d-flex">
+        <div>
+            <img id="i6" src="bush.jpg" alt="Bushes" height="125" width="125" onclick="check(6)">
+            <img id="i7" src="bush.jpg" alt="Bushes" height="125" width="125" onclick="check(7)">
+            <img id="i8" src="bush.jpg" alt="Bushes" height="125" width="125" onclick="check(8)">
+            <img id="i9" src="bush.jpg" alt="Bushes" height="125" width="125" onclick="check(9)">
+            <img id="i10" src="bush.jpg" alt="Bushes" height="125" width="125" onclick="check(10)">
+            <img id="i11" src="bush.jpg" alt="Bushes" height="125" width="125" onclick="check(11)">
         </div>
-   
-      </div>
-      <div class="container">
-        <div class="row">
-            <div class="col-sm-2"><img src="C:\Users\S559348\Documents\GitHub\44563-webapps-s23-assignment7-s559348\tiger.jpg"/></div>
-          <div class="col-sm-2"><img src="C:\Users\S559348\Documents\GitHub\44563-webapps-s23-assignment7-s559348\tiger.jpg"/></div>
-          <div class="col-sm-2"><img src="C:\Users\S559348\Documents\GitHub\44563-webapps-s23-assignment7-s559348\tiger.jpg"/></div>
-          <div class="col-sm-2"><img src="C:\Users\S559348\Documents\GitHub\44563-webapps-s23-assignment7-s559348\tiger.jpg"/></div>
-          <div class="col-sm-2"><img src="C:\Users\S559348\Documents\GitHub\44563-webapps-s23-assignment7-s559348\tiger.jpg"/></div>
-          <div class="col-sm-2"><img src="C:\Users\S559348\Documents\GitHub\44563-webapps-s23-assignment7-s559348\tiger.jpg"/></div>  
+    </div>
+    <div class="image-row d-flex">
+        <div>
+            <img id="i12" src="bush.jpg" alt="Bushes" height="125" width="125" onclick="check(12)">
+            <img id="i13" src="bush.jpg" alt="Bushes" height="125" width="125" onclick="check(13)">
+            <img id="i14" src="bush.jpg" alt="Bushes" height="125" width="125" onclick="check(14)">
+            <img id="i15" src="bush.jpg" alt="Bushes" height="125" width="125" onclick="check(15)">
+            <img id="i16" src="bush.jpg" alt="Bushes" height="125" width="125" onclick="check(16)">
+            <img id="i17" src="bush.jpg" alt="Bushes" height="125" width="125" onclick="check(17)">
         </div>
-      </div>
-      <div class="container">
-        <div class="row">
-            <div class="col-sm-2"><img src="C:\Users\S559348\Documents\GitHub\44563-webapps-s23-assignment7-s559348\grss.jpg"/></div>
-            <div class="col-sm-2"><img src="C:\Users\S559348\Documents\GitHub\44563-webapps-s23-assignment7-s559348\grss.jpg"/></div>
-            <div class="col-sm-2"><img src="C:\Users\S559348\Documents\GitHub\44563-webapps-s23-assignment7-s559348\grss.jpg"/></div>
-            <div class="col-sm-2"><img src="C:\Users\S559348\Documents\GitHub\44563-webapps-s23-assignment7-s559348\grss.jpg"/></div>
-            <div class="col-sm-2"><img src="C:\Users\S559348\Documents\GitHub\44563-webapps-s23-assignment7-s559348\grss.jpg"/></div>
-            <div class="col-sm-2"><img src="C:\Users\S559348\Documents\GitHub\44563-webapps-s23-assignment7-s559348\grss.jpg"/></div>
+    </div>
+    <div class="image-row d-flex">
+        <div>
+            <img id="i18" src="bush.jpg" alt="Bushes" height="125" width="125" onclick="check(18)">
+            <img id="i19" src="bush.jpg" alt="Bushes" height="125" width="125" onclick="check(19)">
+            <img id="i20" src="bush.jpg" alt="Bushes" height="125" width="125" onclick="check(20)">
+            <img id="i21" src="bush.jpg" alt="Bushes" height="125" width="125" onclick="check(21)">
+            <img id="i22" src="bush.jpg" alt="Bushes" height="125" width="125" onclick="check(22)">
+            <img id="i23" src="bush.jpg" alt="Bushes" height="125" width="125" onclick="check(23)">
         </div>
-      </div>
-  </body>
+    </div>
+</div>
+<script>
+    var ids=["i0","i1","i2","i3","i4","i5","i6","i7","i8","i9","i10",
+    "i11","i12","i13","i14","i15","i16","i17","i18","i19","i20","i21","i22","i23"]
+    var checkCount = 0
+    var penalty = 0
+    var lastCheck = 0
+    var mouseLocation = 13
+    var catLocation = 21
+    let gameOver = false
+    function check(position){
+        if(gameOver){
+            return;
+        }
+        var id = ids[position]
+        img = document.getElementById(id);
+        if(position==mouseLocation){
+            img.src = "mouse.jpg";
+            gameOver = true;
+            penalty -= 3;
+
+        }
+        else if(position==catLocation){
+            img.src = "tiger.jpg";
+            gameOver = true;
+            penalty += 4;
+        }
+        else{
+            img.src = "grass.jpg";
+        }
+        checkCount++;
+        penalty++;
+
+        document.getElementById("bushes").innerHTML = "Number of bushes checked is: " +checkCount;
+        document.getElementById("penalty").innerHTML = "penalty: "+penalty;
+        lastCheck = position;
+        }
+        function help(){
+            console.log(lastCheck)
+            const catRow = Math.floor(catLocation/4);
+            const catCol = catLocation%6;
+            const mouseRow = Math.floor(mouseLocation/4);
+            const mouseCol = mouseLocation%6;
+            const lastRow = Math.floor(lastCheck/4);
+            const lastCol = lastCheck%6;
+            console.log(catRow)
+            console.log(catCol)
+            console.log(mouseRow)
+            console.log(mouseCol)
+            console.log(lastRow)
+            console.log(lastCol)
+            penalty = penalty+2;
+            document.getElementById("penalty").innerHTML = "Penalty is "+penalty;
+            
+           if((Math.abs(catRow-lastRow)<=1 && Math.abs(catCol-lastCol)<=1)&&(Math.abs(catRow-mouseRow)>1||Math.abs(catCol-mouseCol)>1)){
+                document.getElementById("help").innerHTML= "meow";
+            }
+           
+            else if((Math.abs(mouseRow-lastRow)<=1 && Math.abs(mouseCol-lastCol)<=1)&&( Math.abs(catRow-mouseRow)>1||Math.abs(catCol-mouseCol)>1)){
+                document.getElementById("help").innerHTML="squeak";
+            }
+           else{
+            document.getElementById("help").innerHTML= "sorry, no help available";
+           }
+        }
+        function newGame(){
+            mouseLocation = Math.floor(Math.random()*24)
+            catLocation = Math.floor(Math.random()*24)
+            document.getElementById("bushes").innerHTML = "Number of bushes checked is 0"
+            document.getElementById("penalty").innerHTML = "Penalty is 0"
+            for(var i=0;i<=23;i++){
+                document.getElementById(ids[i]).src="bush.jpg"
+                
+            }
+        }
+      
+</script>
+  
+</body>
 </html>
